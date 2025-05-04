@@ -1,1 +1,1 @@
-# Monitored-MBIE-EB
+# Exploration-in-Mon-MDPs
