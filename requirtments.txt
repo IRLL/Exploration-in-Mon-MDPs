@@ -1,0 +1,12 @@
+gymnasium==0.28.1
+swig
+box2d
+numpy
+tqdm
+hydra-core
+hydra-joblib-launcher
+matplotlib
+seaborn
+numba
+scipy
+wandb
