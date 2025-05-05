@@ -1,0 +1,6 @@
+[submodule "Mon-MBIE-EB"]
+	path = Mon-MBIE-EB
+	url = https://github.com/alirezakazemipour/Mon-MBIE-EB
+[submodule "Directed-E2"]
+	path = Directed-E2
+	url = https://github.com/alirezakazemipour/Mon-MBIE-EB
