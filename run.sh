@@ -32,23 +32,23 @@ fi
 
 if [ $x == 1 ] || [ $x == 2 ]; then
 
-cd Mon-MBIE-EB || exit
+cd Exploration-in-Mon-MDPs/Mon-MBIE-EB || exit
 git checkout $branch
 
 if test -d data; then
   rm -rf data
 fi
 
-python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
 
 cd ../mon_mdp_neurips24 || exit
 git checkout "$branch"
-python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
 
-cd ../Mon-MBIE-EB || exit
-python simple_plot.py
+# cd ../Mon-MBIE-EB || exit
+# python simple_plot.py
 
-cp -r figs ../
+# cp -r figs ../
 
 elif [ $x == 3 ]; then
     cd Mon-MBIE-EB || exit
