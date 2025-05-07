@@ -4,7 +4,7 @@
 # 48_benchmark, main_unsolvable, known_monitor, mbie_eb_solvable, mbie_eb_unsolvable, pess_mbie_eb_solvable,
 # pess_mbie_eb_unsolvable.
 
-echo "Make sure your venv is activated!"
+echo "Make sure your venv is activated! And Gym-Grid is installed"
 
 branch=$1
 echo "You selected: $branch."
@@ -32,23 +32,23 @@ fi
 
 if [ $x == 1 ] || [ $x == 2 ]; then
 
-cd Exploration-in-Mon-MDPs/Mon-MBIE-EB || exit
+cd Mon-MBIE-EB || exit
 git checkout $branch
 
 if test -d data; then
   rm -rf data
 fi
 
-$SLURM_TMPDIR/Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
+../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 2)" #>/dev/null
 
 cd ../mon_mdp_neurips24 || exit
 git checkout "$branch"
-$SLURM_TMPDIR/Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
+../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 2)" #>/dev/null
 
-# cd ../Mon-MBIE-EB || exit
-# python simple_plot.py
+cd ../Mon-MBIE-EB || exit
+../venv/bin/python simple_plot.py
 
-# cp -r figs ../
+cp -r figs ../
 
 elif [ $x == 3 ]; then
     cd Mon-MBIE-EB || exit
