@@ -39,11 +39,11 @@ if test -d data; then
   rm -rf data
 fi
 
-Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
+$SLURM_TMPDIR/Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
 
 cd ../mon_mdp_neurips24 || exit
 git checkout "$branch"
-Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
+$SLURM_TMPDIR/Exploration-in-Mon-MDPs/venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" #>/dev/null
 
 # cd ../Mon-MBIE-EB || exit
 # python simple_plot.py
