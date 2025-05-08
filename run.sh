@@ -39,11 +39,17 @@ if test -d data; then
   rm -rf data
 fi
 
+echo "Mon-MBIE-EB started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "Mon-MBIE-EB done."
 
 cd ../mon_mdp_neurips24 || exit
 git checkout "$branch"
+
+echo "Directed-E^2 started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "Directed-E^2 done."
+
 
 cd ../Mon-MBIE-EB || exit
 ../venv/bin/python simple_plot.py
@@ -58,14 +64,21 @@ if test -d data; then
   rm -rf data
 fi
 
+echo "$branch started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "$branch done."
 
 git checkout main_unsolvable
+echo "Mon-MBIE-EB started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "Mon-MBIE-EB done."
 
 cd ../mon_mdp_neurips24 || exit
 git checkout main_unsolvable
+
+echo "Directed-E^2 started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "Directed-E^2 done."
 
 cd ../Mon-MBIE-EB || exit
 git checkout "$branch"
@@ -81,10 +94,14 @@ if test -d data; then
   rm -rf data
 fi
 
+echo "$branch started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "$branch done."
 
 git checkout main_unsolvable
+echo "Mon-MBIE-EB started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "Mon-MBIE-EB done."
 
 git checkout "$branch"
 ../venv/bin/python simple_plot.py
