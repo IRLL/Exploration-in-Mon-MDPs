@@ -33,7 +33,7 @@ fi
 if [ $x == 1 ] || [ $x == 2 ]; then
 
 cd Mon-MBIE-EB || exit
-git checkout "$branch"
+git checkout -f "$branch"
 
 if test -d data; then
   rm -rf data
@@ -44,7 +44,7 @@ echo "Mon-MBIE-EB started."
 echo "Mon-MBIE-EB done."
 
 cd ../mon_mdp_neurips24 || exit
-git checkout "$branch"
+git checkout -f "$branch"
 
 echo "Directed-E^2 started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
@@ -58,7 +58,7 @@ cp -r figs ../
 
 elif [ $x == 3 ]; then
     cd Mon-MBIE-EB || exit
-git checkout "$branch"
+git checkout -f "$branch"
 
 if test -d data; then
   rm -rf data
@@ -68,27 +68,27 @@ echo "$branch started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
 echo "$branch done."
 
-git checkout main_unsolvable
+git checkout -f main_unsolvable
 echo "Mon-MBIE-EB started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
 echo "Mon-MBIE-EB done."
 
 cd ../mon_mdp_neurips24 || exit
-git checkout main_unsolvable
+git checkout -f main_unsolvable
 
 echo "Directed-E^2 started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
 echo "Directed-E^2 done."
 
 cd ../Mon-MBIE-EB || exit
-git checkout "$branch"
+git checkout -f "$branch"
 ../venv/bin/python simple_plot.py
 
 cp -r figs ../
 
 elif [ $x == 4 ] || [ $x == 5 ] || [ $x == 6 ] || [ $x == 7 ]; then
     cd Mon-MBIE-EB || exit
-git checkout "$branch"
+git checkout -f "$branch"
 
 if test -d data; then
   rm -rf data
@@ -98,12 +98,12 @@ echo "$branch started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
 echo "$branch done."
 
-git checkout main_unsolvable
+git checkout -f main_unsolvable
 echo "Mon-MBIE-EB started."
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
 echo "Mon-MBIE-EB done."
 
-git checkout "$branch"
+git checkout -f "$branch"
 ../venv/bin/python simple_plot.py
 
 cp -r figs ../
