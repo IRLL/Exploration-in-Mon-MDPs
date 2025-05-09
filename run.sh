@@ -39,16 +39,17 @@ if test -d data; then
   rm -rf data
 fi
 
-echo "Mon-MBIE-EB started."
+echo "***Mon-MBIE-EB started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
-echo "Mon-MBIE-EB done."
+echo "***Mon-MBIE-EB done at $(date).***"
 
 cd ../mon_mdp_neurips24 || exit
 git checkout -f "$branch"
 
-echo "Directed-E^2 started."
+
+echo "***Directed-E^2 started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
-echo "Directed-E^2 done."
+echo "***Directed-E^2 done at $(date).***"
 
 
 cd ../Mon-MBIE-EB || exit
@@ -64,21 +65,23 @@ if test -d data; then
   rm -rf data
 fi
 
-echo "$branch started."
+echo "***$branch started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
-echo "$branch done."
+echo "***$branch done at $(date).***"
 
 git checkout -f main_unsolvable
-echo "Mon-MBIE-EB started."
+
+echo "***Mon-MBIE-EB started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
-echo "Mon-MBIE-EB done."
+echo "***Mon-MBIE-EB done at $(date).***"
 
 cd ../mon_mdp_neurips24 || exit
 git checkout -f main_unsolvable
 
-echo "Directed-E^2 started."
+
+echo "***Directed-E^2 started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
-echo "Directed-E^2 done."
+echo "***Directed-E^2 done at $(date).***"
 
 cd ../Mon-MBIE-EB || exit
 git checkout -f "$branch"
@@ -94,14 +97,14 @@ if test -d data; then
   rm -rf data
 fi
 
-echo "$branch started."
+echo "$branch started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
-echo "$branch done."
+echo "$branch done at $(date).***"
 
 git checkout -f main_unsolvable
-echo "Mon-MBIE-EB started."
+echo "***Mon-MBIE-EB started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
-echo "Mon-MBIE-EB done."
+echo "***Mon-MBIE-EB done at $(date).***"
 
 git checkout -f "$branch"
 ../venv/bin/python simple_plot.py
