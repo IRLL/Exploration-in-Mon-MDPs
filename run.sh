@@ -48,7 +48,7 @@ git checkout -f "$branch"
 
 
 echo "***Directed-E^2 started at $(date).***"
-../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" >/dev/null
 echo "***Directed-E^2 done at $(date).***"
 
 
@@ -80,7 +80,7 @@ git checkout -f main_unsolvable
 
 
 echo "***Directed-E^2 started at $(date).***"
-../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" >/dev/null
 echo "***Directed-E^2 done at $(date).***"
 
 cd ../Mon-MBIE-EB || exit
