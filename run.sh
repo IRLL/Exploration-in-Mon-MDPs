@@ -30,7 +30,34 @@ else
   exit
 fi
 
-if [ $x == 1 ] || [ $x == 2 ]; then
+if [ $x == 1 ]; then
+
+cd Mon-MBIE-EB || exit
+git checkout -f "$branch"
+
+if test -d data; then
+  rm -rf data
+fi
+
+echo "***Mon-MBIE-EB started at $(date).***"
+../dee_venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+echo "***Mon-MBIE-EB done at $(date).***"
+
+cd ../mon_mdp_neurips24 || exit
+git checkout -f "$branch"
+
+
+echo "***Directed-E^2 started at $(date).***"
+../dee_venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" >/dev/null
+echo "***Directed-E^2 done at $(date).***"
+
+
+cd ../Mon-MBIE-EB || exit
+../dee_venv/bin/python simple_plot.py
+
+cp -r figs ../
+
+elif [ $x == 2 ]; then
 
 cd Mon-MBIE-EB || exit
 git checkout -f "$branch"
