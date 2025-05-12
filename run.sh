@@ -83,6 +83,10 @@ echo "***Directed-E^2 started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" >/dev/null
 echo "***Directed-E^2 done at $(date).***"
 
+ls
+pwd
+tree
+
 cd ../Mon-MBIE-EB || exit
 git checkout -f "$branch"
 ../venv/bin/python simple_plot.py
@@ -105,6 +109,10 @@ git checkout -f main_unsolvable
 echo "***Mon-MBIE-EB started at $(date).***"
 ../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
 echo "***Mon-MBIE-EB done at $(date).***"
+
+ls
+pwd
+tree
 
 git checkout -f "$branch"
 ../venv/bin/python simple_plot.py
