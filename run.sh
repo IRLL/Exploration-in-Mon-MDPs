@@ -48,7 +48,7 @@ git checkout -f "$branch"
 
 
 echo "***Directed-E^2 started at $(date).***"
-../dee_venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" >/dev/null
+../dee_venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" 2>&1
 echo "***Directed-E^2 done at $(date).***"
 
 
@@ -75,7 +75,7 @@ git checkout -f "$branch"
 
 
 echo "***Directed-E^2 started at $(date).***"
-../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" >/dev/null
+../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" 2>&1
 echo "***Directed-E^2 done at $(date).***"
 
 
