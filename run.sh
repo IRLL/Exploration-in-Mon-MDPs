@@ -30,8 +30,6 @@ else
   exit
 fi
 
-if [$2 != ]
-
 if [ $x == 1 ]; then
 
 cd Mon-MBIE-EB || exit
