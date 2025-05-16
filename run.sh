@@ -40,7 +40,7 @@ if test -d data; then
 fi
 
 echo "***Mon-MBIE-EB started at $(date).***"
-../dee_venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
+../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" >/dev/null
 echo "***Mon-MBIE-EB done at $(date).***"
 
 cd ../mon_mdp_neurips24 || exit
@@ -48,12 +48,12 @@ git checkout -f "$branch"
 
 
 echo "***Directed-E^2 started at $(date).***"
-../dee_venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" 2>&1
+../venv/bin/python main.py -m hydra/launcher=joblib hydra/sweeper=manual_sweeper experiment.rng_seed="range(0, 30)" agent="$2" 2>&1
 echo "***Directed-E^2 done at $(date).***"
 
 
 cd ../Mon-MBIE-EB || exit
-../dee_venv/bin/python simple_plot.py
+../venv/bin/python simple_plot.py
 
 cp -r figs ../
 
