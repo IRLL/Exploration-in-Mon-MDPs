@@ -1,5 +1,5 @@
 [submodule "mon_mdp_neurips24"]
-	path = mon_mdp_neurips24
+	path = Directed_E2
 	url = https://github.com/alirezakazemipour/mon_mdp_neurips24
 [submodule "Mon-MBIE-EB"]
 	path = Mon-MBIE-EB
