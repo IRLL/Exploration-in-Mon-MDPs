@@ -1,20 +1,29 @@
 Source code of the paper [Model-Based Exploration in Truthful Monitored Markov Decision
 Processes](https://arxiv.org/abs/2502.16772).
 
+<p align="center">
+  <img src="banner/Treasure_Hunt_Uncertainty.png" width="30%">
+  <img src="banner/Treasure_Hunt_Counterfactual.png" width="30%">
+  <img src="banner/Treasure_Hunt_Cautious.png" width="30%">
+</p>
 
-[//]: # (<p align="center">)
+# Structure's Logic
+The paper includes eight types of experiments. We have included
+the source code of [Directed-E<sup>2</sup>](https://github.com/AmiiThinks/mon_mdp_neurips24) and Monitor MBIE-EB
+(Mon-MBIE) as git submodules. To reproduce the result of each experiment's type, we should `checkout` to the corresponding 
+branch that contains the experiments code. The experiments and corresponding branch name are:
 
-[//]: # (  <img src="banner/Treasure_Hunt_Uncertainty.png" width="33%">)
+|                    Experiment                     |    Branch name    |
+|:-------------------------------------------------:|:-----------------:|
+|              48 benchmarks (Fig. 6)               |  `48_benchamrk`   |
+| Unsolvable Mon-MDPs (Fig. 4.b, 4.c, 5, 9, and 10) | `main_unsolvable` |
+|              Known Monitor (Fig. 11)              |  `known_monitor`  |
+|              Known Monitor (Fig. 11)              |  `known_monitor`  |
 
-[//]: # (  <img src="banner/Treasure_Hunt_Counterfactual.png" width="33%">)
-
-[//]: # (  <img src="banner/Treasure_Hunt_Cautious.png" width="33%">)
-
-[//]: # (</p>)
 
 
-| ![](banner/Treasure_Hunt_Uncertainty.png) | ![](banner/Treasure_Hunt_Uncertainty.png) | ![](banner/Treasure_Hunt_Uncertainty.png) |
-|:-----------------------------------------:|:-----------------------------------------:|:-----------------------------------------:|
+
+
 
 ### TODO
 The README will be added soon.
