@@ -1,13 +1,11 @@
 Source code of the paper [Model-Based Exploration in Truthful Monitored Markov Decision
 Processes](https://arxiv.org/abs/2502.16772).
 
-![](banner/Treasure_Hunt_Uncertainty.pdf)
-
-[//]: # (<p align="center">)
-[//]: # (  <img src="banner/Treasure_Hunt_Uncertainty.pdf">)
-[//]: # (</p>)
-
-
+<p align="center">
+  <img src="banner/Treasure_Hunt_Uncertainty.png" width="33%">
+  <img src="banner/Treasure_Hunt_Counterfactual.png" width="33%">
+  <img src="banner/Treasure_Hunt_Cautious.png" width="33%">
+</p>
 
 ### TODO
 The README will be added soon.
