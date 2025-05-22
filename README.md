@@ -9,7 +9,8 @@ Processes](https://arxiv.org/abs/2502.16772).
 
 # Structure's Logic
 The paper includes eight types of experiments. We have included
-the source code of [Directed-E<sup>2</sup>](https://github.com/AmiiThinks/mon_mdp_neurips24) and Monitor MBIE-EB-EB
+the source code of [Directed-E<sup>2</sup>](https://github.com/AmiiThinks/mon_mdp_neurips24)
+([with our additional changes](https://github.com/alirezakazemipour/mon_mdp_neurips24)) and Monitor MBIE-EB-EB
 (Mon-MBIE-EB) as git submodules. To reproduce the result of each experiment's type, we should `checkout` to the corresponding 
 branch that contains the experiments code. The experiments and corresponding branch name:
 
@@ -23,9 +24,29 @@ branch that contains the experiments code. The experiments and corresponding bra
 | Pessimistic MBIE-EB in solvable Mon-MDPs (Fig. 13.a) |  `pess_mbie_solvable`  |
 | Pessimistic MBIE-EB in solvable Mon-MDPs (Fig. 13.b) | `pess_mbie_unsolvable` |
 
-# Running the code
+## Virtual Environments
+To run the experiments, we need two virtual environments: one for benchmarks' implementation of Directed-E<sup>2</sup>
+and one for our implementation of Bottleneck. Because we want to compare the Mon-MBIe-EB's performance
+against Directed-E<sup>2</sup> **on benchmarks that Directed-E<sup>2</sup>** was originally test on, we need one virtual
+environment that contains the original benchmarks' implementations. Therefore, if you want to reproduce the 48 benchmark results, you need to 
+create a virtual environment first, then run `pip install -r requirments.txt` in the root directory, change your working 
+directory to Directed-E<sup>2</sup> submodule, run `git checkout 48_benchmark` and:
+```bash
+cd src/gym-grid
+pip install -e .
+```
+to install the 48 benchmark environments. Otherwise, repeat the above the procedure, but instead, change your working
+directory to Mon-MBIE-EB submodule and remain in the main branch and:
+```bash
+cd src/gym-grid
+pip install -e .
+```
+
+## Running the Code
+To run the code, we need to use `run.sh`. This script accepts the branch name and initialization mode of experiments
+that involve Directed-E<sup>2</sup>, and it returns the `figs` folder that would contain the plots.
+For example, XXX
+
 
 # TODO
 The README will be completed gradually soon.
-
-
