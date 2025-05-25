@@ -7,6 +7,11 @@ Processes](https://arxiv.org/abs/2502.16772).
   <img src="banner/Treasure_Hunt_Cautious.png" width="30%">
 </p>
 
+# Download
+Don't forget the **`--recursive`** argument when cloning the project.
+```bash
+git clone --recursive git@github.com:IRLL/Exploration-in-Mon-MDPs.git
+```
 # Structure's Logic
 The paper includes eight types of experiments. We have included
 the source code of [Directed-E<sup>2</sup>](https://github.com/AmiiThinks/mon_mdp_neurips24)
