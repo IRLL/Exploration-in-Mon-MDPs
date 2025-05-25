@@ -26,16 +26,20 @@ branch that contains the experiments code. The experiments and corresponding bra
 
 ## Virtual Environments
 To run the experiments, we need two virtual environments: one for benchmarks' implementation of Directed-E<sup>2</sup>
-and one for our implementation of Bottleneck. Because we want to compare the Mon-MBIe-EB's performance
-against Directed-E<sup>2</sup> **on benchmarks that Directed-E<sup>2</sup>** was originally test on, we need one virtual
-environment that contains the original benchmarks' implementations. Therefore, if you want to reproduce the 48 benchmark results, you need to 
-create a virtual environment first, then run `pip install -r requirments.txt` in the root directory, change your working 
-directory to Directed-E<sup>2</sup> submodule, run `git checkout 48_benchmark` and:
+and one for our implementation of Bottleneck. Because we want to compare the Mon-MBIE-EB's performance
+against Directed-E<sup>2</sup> **on benchmarks that Directed-E<sup>2</sup> was originally test on**, we need one virtual
+environment that contains the original benchmarks' implementations. Therefore, if you want to reproduce the 48 benchmark
+results, you need to create a virtual environment and name it `de2_venv`, then run `pip install -r requirments.txt` in 
+the root directory, change your working directory to Directed-E<sup>2</sup> submodule, run `git checkout 48_benchmark` 
+and:
 ```bash
 cd src/gym-grid
 pip install -e .
 ```
-to install the 48 benchmark environments. Otherwise, repeat the above the procedure, but instead, change your working
+which installs the 48 benchmark environments.
+
+For other experiments we will use our own environment implementations. Repeat the above the procedure, but instead, name
+your virtual environment to `venv`, change your working
 directory to Mon-MBIE-EB submodule and remain in the main branch and:
 ```bash
 cd src/gym-grid
@@ -45,8 +49,9 @@ pip install -e .
 ## Running the Code
 To run the code, we need to use `run.sh`. This script accepts the branch name and initialization mode of experiments
 that involve Directed-E<sup>2</sup>, and it returns the `figs` folder that would contain the plots.
-For example, XXX
-
+For example, `./run.sh 48_benchamrk default` will run the 48 benchmarks experiments where the default initialization of 
+Directed-E<sup>2</sup> is used, and `./run.sh 48_benchamrk pessimistic_init` will run the 48 benchmarks experiments
+where the pessimistic initialization of Directed-E<sup>2</sup> is used.
 
 # TODO
 The README will be completed gradually soon.
