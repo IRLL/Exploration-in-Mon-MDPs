@@ -45,6 +45,7 @@ directory to Mon-MBIE-EB submodule and remain in the main branch and:
 cd src/gym-grid
 pip install -e .
 ```
+To Avoid confusions, you can take a look at `prepare_venvs.sh` to see how the above procedure is done.
 
 ## Running the Code
 To run the code, we need to use `run.sh`. This script accepts the branch name and initialization mode of experiments
@@ -53,5 +54,5 @@ For example, `./run.sh 48_benchamrk default` will run the 48 benchmarks experime
 Directed-E<sup>2</sup> is used, and `./run.sh 48_benchamrk pessimistic_init` will run the 48 benchmarks experiments
 where the pessimistic initialization of Directed-E<sup>2</sup> is used.
 
-# TODO
-The README will be completed gradually soon.
+If you're using a SLURM-based cluster, you can take a look at `submit.sh` to see how we run the experiments given the
+virtual environments were prepared. 
