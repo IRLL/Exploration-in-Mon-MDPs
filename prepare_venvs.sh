@@ -13,6 +13,7 @@ deactivate
 
 cd ../../..
 source venv/bin/activate
+pip install -r requirtments.txt
 cd Mon-MBIE-EB
 git checkout main
 cd src/gym-grid
